@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <title>Video Game Heroes</title>
+
+  <style type="text/css">
+
+  body {
+    min-height:100%;
+    background-color:black;
+    background-image: url("images/lightning.jpg");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    background-position: center center; 
+}
+.gameText2{
+    margin: auto;
+    width: 50%;
+    text-align:center;
+    color:white;
+    float:right;
+    font-size:20px;
+}
+a.hero-text {
+      position: relative;
+      width: 100%;
+      text-decoration: none !important;
+      text-align: center;
+    }
+a.hero-text::after {
+      content: attr(title);
+      position: absolute;
+      width:100%;
+      left: 0;
+      bottom: 0;
+      right:0;
+      padding: 0.5em 25px;
+      background: rgba(0,0,0,0.8);
+      text-decoration: none !important;
+      color: #fff;
+      opacity: 0;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+    }
+a.hero-text:hover::after, a.hero-text:focus::after {
+      opacity: 1.0;
+    }
+a.villian-text {
+      position: relative;
+      width: 100%;
+      text-decoration: none !important;
+      text-align: center;
+    }
+a.villian-text::after {
+      content: attr(title);
+      position: absolute;
+      width:100%;
+      left: 0;
+      bottom: 0;
+      right:0;
+      padding: 0.5em 25px;
+      background: rgba(0,0,0,0.8);
+      text-decoration: none !important;
+      color: #fff;
+      opacity: 0;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+    }
+a.villian-text:hover::after, a.villian-text:focus::after {
+      opacity: 1.0;
+    }
+a.health-text {
+      position: relative;
+      width: 100%;
+      text-decoration: none !important;
+      text-align: center;
+    }
+a.health-text::after {
+      content: attr(title);
+      position: absolute;
+      width:100%;
+      left: 0;
+      bottom: 0;
+      right:0;
+      padding: 0.5em 25px;
+      background: rgba(0,0,0,0.8);
+      text-decoration: none !important;
+      color: #fff;
+      opacity: 0;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+    }
+a.health-text:hover::after, a.health-text:focus::after {
+      opacity: 1.0;
+    }
+
+.big-container{
+    min-height:100%;
+}
+.instructions{
+    width:33%;
+    color:white;
+    float:right;
+}
+.jumbotron.bg-primary.text-center{
+    background-color:black;
+    margin:0;
+    background-image: url("https://img00.deviantart.net/6acf/i/2013/095/6/0/video_game_characters_wallpaper_by_v1d30guy-d60lnsh.png");
+    background-size:cover;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+.heroContainer{
+    padding:20px;
+    height:100%;
+    margin: 0 auto;
+    background-image: url("images/border.jpg");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    border:3px solid rgb(209, 36, 36);
+}
+.container-fluid{
+    min-height:100%;
+    margin:0 auto;
+}
+.battle-zone{
+    height:30%;
+    width: 500px;
+    background-color:black;
+    background-image: url("images/blood.png");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    border:3px solid rgb(209, 36, 36);
+}
+.health-zone{
+    height:5%;
+    width:500px;
+    background-color: rgb(209, 36, 36);;
+    color:white;
+
+}
+#hero-battle-image {
+        padding:0px;
+      width: 200px;
+      height: 200px;
+      float:left;
+    }
+.attack-button{
+        visibility: hidden;
+    }
+#villian-battle-image {
+        padding:0px;
+      width: 200px;
+      height: 200px;
+      float:right;
+    }
+.hero-health{
+    float: left;
+    }
+.villian-health{
+    float: right;
+    }
+.hero-div{
+    margin: auto;
+    width: 100%;
+    text-align:center;
+}
+.villian-div{
+    margin: auto;
+    width: 100%;
+    text-align:center;
+}
+.middle{
+    margin: auto;
+    width: 50%;
+    text-align:center;
+}
+.fight-button{
+    margin: auto;
+    text-align:center;
+}
+
+.battle-text{
+    margin: auto;
+    width: 100%;
+    text-align:center;
+    color:white;
+    
+}
+.hero-images {
+        padding:20px;
+      width: 200px;
+      height: 200px;
+    }
+.villian-images {
+        padding:20px;
+      width: 200px;
+      height: 200px;
+    }
+
+
+
+  </style>
+
+</head>
+<body>
+    <div class = "big-container">
+        <div class="jumbotron bg-primary text-center">
+            <h1 style="color:white">Video Game Heroes</h1>
+        </div>
+        <audio id="audiotag" src="images/unsheath-sword.wav" preload="auto"></audio>
+    <div class = "container-fluid">
+        <div class="jumbotron heroContainer">
+            <div class = "gameText" style="color:black">
+                <h2>Choose Your Hero</h2>
+                <div class = "hero-div"></div>
+                <button class ="fight-button">Start Battle</button>
+            </div>
+            <div class = "container battle-zone">
+<div class = "hero-battle-zone"></div><div class = "villian-battle-zone"></div><button class ="attack-button">Attack</button>
+
+            </div>
+            <div class = "container health-zone">
+                <div class = "hero-health"></div><div class = "villian-health"></div>
+                <div class = "middle">VS</div>
+                            </div>
+            <div class = "battle-text">GET READY FOR A SHOWDOWN</div>
+     
+          <h2>Choose Your Villian</h2>
+            <div class = "villian-div"></div>
+      </div>
+            </div> 
+
+
+
+  <!-- JAVASCRIPT  -->
+  <!-- ========================================= -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+  var masterChief = {
+        name: "Master Chief",
+        image:"images/masterChief.png",
+        powerLevel: 200,
+        defenseLevel:200,
+        health: 200, 
+        heroID: "master-chief-text",
+        imageID: "master-chief-image",
+        info: function() {return masterChief.name + " Powerlevel: " + masterChief.powerLevel + ", Defenselevel: " + masterChief.defenseLevel + ", Health: " + masterChief.health;}
+        //get info() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health;}
+  }
+  var kratos = {
+        name: "Kratos",
+        image:"images/kratos.png",
+        powerLevel: 300,
+        defenseLevel:150,
+        health: 140,
+        heroID: "kratos-text",
+        imageID: "kratos-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+  }; 
+  var link = {
+        name: "Link",
+        image:"images/link.png",
+        powerLevel: 160,
+        defenseLevel: 270,
+        health: 300, 
+        heroID: "link-text",
+        imageID: "link-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+  }
+
+    var solidSnake = {
+          name: "Solid Snake",
+        image:"images/solid_snake.png",
+        powerLevel: 80,
+        defenseLevel: 400,
+        health: 100, 
+        heroID: "solid-snake-text",
+        imageID: "solid-snake-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+  }
+  var bowser = {
+        name: "Bowser",
+        image:"images/bowser.png",
+        powerLevel: 190,
+        defenseLevel: 200,
+        health: 200, 
+        villianID: "bowser-text",
+        imageID: "bowser-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+         //get info() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health;}
+  }
+  var generalGrievous = {
+        name: "General Grievous",
+        image:"images/general_grievous.png",
+        powerLevel: 250,
+        defenseLevel: 145,
+        health: 250, 
+        villianID: "general-grievous-text",
+        imageID: "general-grievous-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+         //get info() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health;}
+  }
+  var glados = {
+        name: "GlaD0S",
+        image:"images/glados.png",
+        powerLevel: 350,
+        defenseLevel: 80,
+        health: 150, 
+        villianID: "glados-text",
+        imageID: "glados-image",
+        info: function() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health}
+         //get info() {return this.name + " Powerlevel: " + this.powerLevel + ", Defenselevel: " + this.defenseLevel + ", Health: " + this.health;}
+  }
+
+var heroArr = [masterChief, kratos, link, solidSnake];
+var villianArr = [bowser, generalGrievous, glados];
+var wins = 0;
+var losses = 0;
+  var max = 100;
+  var min = 20;
+   
+  var currentWins = $("#wins");
+  var currentLoss = $("#losses");
+  var heroDiv = $(".hero-div");
+  var battleDiv = $(".battle-zone");
+  var villianDiv = $(".villian-div");
+  var heroBattleDiv = $(".hero-battle-zone");
+  var villianBattleDiv = $(".villian-battle-zone");
+  var fightButton = $(".fight-button");
+  var attackButton = $(".attack-button");
+  var battleText = $(".battle-text");
+  var heroHealthDiv = $(".hero-health");
+  var villianHealthDiv = $(".villian-health");
+  var middle = $(".middle");
+  var audioSword = new Audio("images/unsheath-sword.wav");
+  
+  function heroCreation(hero){
+   var heroImage = $("<img>");
+   var heroText = $("<a>");
+   heroText.addClass("hero-text");
+   heroImage.attr("src", hero.image);
+   heroText.attr("id", hero.heroID);
+   heroImage.attr("id", hero.imageID);
+   heroText.attr("title", hero.info());
+   heroImage.addClass("hero-images");
+   heroDiv.append(heroText);
+   heroText.append(heroImage);
+}
+
+  heroCreation(masterChief)
+  heroCreation(kratos)
+  heroCreation(link)
+  heroCreation(solidSnake)
+
+
+  function villianCreation(villian){
+   var villianImage = $("<img>");
+   var villianText = $("<a>");
+   villianText.addClass("villian-text");
+   villianImage.attr("src", villian.image);
+   villianText.attr("id", villian.villianID);
+   villianImage.attr("id", villian.imageID);
+   villianText.attr("title", villian.info());
+   villianImage.addClass("villian-images");
+   villianDiv.append(villianText);
+   villianText.append(villianImage);
+}
+
+ villianCreation(bowser)
+ villianCreation(generalGrievous)
+ villianCreation(glados)
+console.log(villianArr.length);
+  heroDiv.on("click", ".hero-text", "hero-images", function() {
+   for (var i = 0; i < heroArr.length; i++) {
+       if (heroArr[i].heroID==($(this).attr("id")) && heroArr[i].health > 0){
+           console.log(heroArr[i]);
+           var heroBattleImage = $("<img>");
+           var healthText = $("<a>");
+           heroBattleImage.attr("src", heroArr[i].image);
+           heroBattleImage.attr("data-heropower",heroArr[i].powerLevel);
+           heroBattleImage.attr("data-herodefense",heroArr[i].defenseLevel);
+           heroBattleImage.attr("data-herohealth",heroArr[i].health);
+           heroBattleImage.attr("data-heroname",heroArr[i].name);
+           heroBattleImage.attr("id", "hero-battle-image");
+           heroHealthDiv.html("health: " + heroArr[i].health);
+           heroBattleDiv.html(heroBattleImage);
+           audioSword.play(); 
+            if ($(villianBattleDiv).is(':empty')) {
+               middle.html(heroArr[i].name + " VS " )
+           }
+           else{
+            middle.html(heroArr[i].name + " VS " + $("#villian-battle-image").attr("data-villianname"))
+           }
+       }
+    }
+  });
+
+  villianDiv.on("click", ".villian-text", "villian-images", function() {
+   for (var i = 0; i < villianArr.length; i++) {
+       if (villianArr[i].villianID==($(this).attr("id")) && villianArr[i].health > 0){
+           console.log(villianArr[i]);
+           var villianBattleImage = $("<img>");
+           villianBattleImage.attr("src", villianArr[i].image);
+           villianBattleImage.attr("data-villianpower",villianArr[i].powerLevel);
+           villianBattleImage.attr("data-villiandefense",villianArr[i].defenseLevel);
+           villianBattleImage.attr("data-villianhealth",villianArr[i].health);
+           villianBattleImage.attr("data-villianname",villianArr[i].name);
+           villianBattleImage.attr("id", "villian-battle-image");
+           villianHealthDiv.html("health: " + villianArr[i].health);
+           villianBattleDiv.html(villianBattleImage);
+           audioSword.play(); 
+           if ($(heroBattleDiv).is(':empty')) {
+               middle.html(" VS " + villianArr[i].name)
+           }
+           else{
+            middle.html($("#hero-battle-image").attr("data-heroname") + " VS " + villianArr[i].name)
+           }
+       }
+    }
+  });
+ 
+var stopIt = 0
+
+$(fightButton).on("click", function() {
+
+if ($(heroBattleDiv).is(':empty') || $(villianBattleDiv).is(':empty')){
+    console.log("you're missing a hero");
+    stopIt++;
+    if(stopIt > 10){
+        alert("Stop clicking the button! You haven't picked your characters -_-")
+    }
+}
+else{
+    $(".attack-button").css({"visibility": "visible"});
+    battleText.html("Todays battle is " + $("#hero-battle-image").attr("data-heroname") + " verses " + $("#villian-battle-image").attr("data-villianname"));
+
+
+}
+});
+
+
+
+
+var maxRoll = 80;
+var minRoll = 20;
+ 
+$(attackButton).on("click", function() {
+    console.log(masterChief.health);
+   var hit = ((Math.floor(Math.random() * (maxRoll - minRoll + 1)) + minRoll));
+console.log(hit);
+var heroHit = Math.round(parseInt($("#hero-battle-image").attr("data-heropower")) * hit);
+console.log(heroHit);
+var villianHit = Math.round(parseInt($("#villian-battle-image").attr("data-villianpower")) * hit);
+console.log(villianHit);
+var heroDamage = Math.round(heroHit/(parseInt($("#villian-battle-image").attr("data-villiandefense"))))
+console.log(heroDamage);
+var villianDamage = Math.round(villianHit/(parseInt($("#hero-battle-image").attr("data-herodefense"))))
+
+battleText.html("Ooh, " + $("#hero-battle-image").attr("data-heroname") + " hit " + $("#villian-battle-image").attr("data-villianname") + " for " + heroDamage + " damage, but was hit back and took " + villianDamage + " damage");
+
+
+for (var i = 0; i < villianArr.length; i++) {
+    if (villianArr[i].name==($("#villian-battle-image").attr("data-villianname"))){
+        console.log(villianArr[i]);
+villianArr[i].health = villianArr[i].health - heroDamage;
+villianHealthDiv.html("health: " + villianArr[i].health);
+checkDeath(villianArr[i], villianBattleDiv, villianHealthDiv);
+    }
+    
+}
+for (var i = 0; i < heroArr.length; i++) {
+    if (heroArr[i].name==($("#hero-battle-image").attr("data-heroname"))){
+heroArr[i].health = heroArr[i].health - villianDamage;
+heroHealthDiv.html("health: " + heroArr[i].health);
+checkDeath(heroArr[i], heroBattleDiv, heroHealthDiv);
+    }
+    
+}
+
+});
+var deaths = 1;
+var victories = 1;
+function checkDeath(hero, imageDiv, healthDiv){
+if (hero.health < 1){
+    healthDiv.html("");
+    imageDiv.html("");
+    $(".attack-button").css({"visibility": "hidden"});
+    if (villianArr.includes(hero) == true){
+        battleText.html("Congrats!");
+        console.log(hero.imageID);
+        $(hero.imageID).attr("src", "images/red_x.png");
+        $(hero.villianID).attr("title", hero.name + " has been defeated");
+        victoires++;
+        checkWinCondition();
+
+    }
+    else if(heroArr.includes(hero) == true){
+        if (hero.imageID == $("#master-chief-image").attr("id")){console.log("this should work");}
+        battleText.html("Your hero was defeated, pick a new hero to battle with");
+        console.log(hero.imageID);
+        $(hero.imageID).attr("src", "images/red_x.png");
+        $(hero.heroID).attr("title", hero.name + " has been defeated");
+        deaths++;
+        checkWinCondition();
+        
+    }
+}
+
+}
+
+function checkWinCondition(){
+ if (deaths > heroArr.length){
+    alert("Stop clicking the button! You haven't picked your characters -_-")
+
+ }
+
+ else if (victories > villianArr.length){
+            villianBattleImage.attr("src", villianArr[i].image);
+           villianBattleImage.attr("data-villianpower",villianArr[i].powerLevel);
+           villianBattleImage.attr("data-villiandefense",villianArr[i].defenseLevel);
+           villianBattleImage.attr("data-villianhealth",villianArr[i].health);
+           villianBattleImage.attr("data-villianname",villianArr[i].name);
+           villianBattleImage.attr("id", "villian-battle-image");
+
+ }
+
+}
+  
+
+  </script>
+</body>
+</html>
